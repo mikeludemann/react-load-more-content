@@ -12,14 +12,14 @@ export default class LoadMoreContent extends Component {
 		let cln = "." + this.props.classname;
 		const idn = "#" + this.props.id;
 		$(document).ready(function() {
-			$(cln).slice(0, 4).show();
+			$(cln).slice(0, this.props.count).show();
 			$(cln).slice(4, $(cln).length).hide();
 			if ($(cln + ":hidden").length !== 0) {
 				$(idn).show();
 			}
 			$(idn).on('click', function(e) {
 				e.preventDefault();
-				$(cln + ":hidden").slice(0, 4).slideDown();
+				$(cln + ":hidden").slice(0, this.props.count).slideDown();
 				if ($(cln + ":hidden").length === 0) {
 					$(idn).fadeOut('slow');
 				}
@@ -42,5 +42,6 @@ export default class LoadMoreContent extends Component {
 LoadMoreContent.propTypes = {
 	data: PropTypes.array.isRequired,
 	id: PropTypes.string.isRequired,
-	classname: PropTypes.string.isRequired
+	classname: PropTypes.string.isRequired,
+	count: PropTypes.string.isRequired
 }

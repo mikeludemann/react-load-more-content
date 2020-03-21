@@ -21,7 +21,7 @@ function App() {
 					Learn React
 				</a>
 			</header>
-      <LoadMoreContent id="loadingMore" classname="list" data={[{id: 1, content: "1"}, {id: 2, content: "2"}, {id: 3, content: "3"}, {id: 4, content: "4"}, {id: 5, content: "5"}]}></LoadMoreContent>
+      <LoadMoreContent id="loadingMore" classname="list" count={4} data={[{id: 1, content: "1"}, {id: 2, content: "2"}, {id: 3, content: "3"}, {id: 4, content: "4"}, {id: 5, content: "5"}]}></LoadMoreContent>
 		</div>
 	);
 }
