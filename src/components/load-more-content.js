@@ -13,7 +13,7 @@ export default class LoadMoreContent extends Component {
 		const idn = "#" + this.props.id;
 		$(document).ready(function() {
 			$(cln).slice(0, this.props.count).show();
-			$(cln).slice(4, $(cln).length).hide();
+			$(cln).slice(this.props.count, $(cln).length).hide();
 			if ($(cln + ":hidden").length !== 0) {
 				$(idn).show();
 			}
