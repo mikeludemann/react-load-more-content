@@ -11,15 +11,16 @@ export default class LoadMoreContent extends Component {
 	componentDidMount(){
 		let cln = "." + this.props.classname;
 		const idn = "#" + this.props.id;
+    let cnt = this.count;
 		$(document).ready(function() {
-			$(cln).slice(0, this.props.count).show();
-			$(cln).slice(this.props.count, $(cln).length).hide();
+			$(cln).slice(0, cnt).show();
+			$(cln).slice(cnt, $(cln).length).hide();
 			if ($(cln + ":hidden").length !== 0) {
 				$(idn).show();
 			}
 			$(idn).on('click', function(e) {
 				e.preventDefault();
-				$(cln + ":hidden").slice(0, this.props.count).slideDown();
+				$(cln + ":hidden").slice(0, cnt).slideDown();
 				if ($(cln + ":hidden").length === 0) {
 					$(idn).fadeOut('slow');
 				}
